@@ -1,0 +1,16 @@
+.titolo{
+
+    color: black;
+    text-align: center;
+    
+}
+.tabella{
+
+    border: 1px solid;
+    text-align: center;
+    color: blue;
+}
+.th{
+
+    border: 1px solid;
+}
