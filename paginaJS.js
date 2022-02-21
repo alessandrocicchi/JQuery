@@ -48,19 +48,19 @@ var data=[
   function inseriscoDipendente(nome, cognome, annoDiNascita, giornoAssunzione, sesso){
 
     data.push({
-        "Id": nextId,
-        "Nome": nome,
-        "Cognome": cognome,
-        "Nascita": annoDiNascita,
-        "Sesso": sesso,
-        "giorno di assunzione": giornoAssunzione,
+        "id": nextId,
+        "firstName": nome,
+        "lastName": cognome,
+        "birthDate": annoDiNascita,
+        "gender": sesso,
+        "hireDate": giornoAssunzione,
     })
 
     nextId++;
   }
 
   function salvaInput(){
-    addEmployee(
+    inseriscoDipendente(
       $("#name").val().trim(),
       $("#lastname").val().trim(),
       $("#birthday").val(),
@@ -74,7 +74,7 @@ var data=[
     stampaDipendenti();
   })
   
-  function eliniminaDipendente(){
+  function eliminaDipendenti(){
     $("#name").val("");
     $("#lastname").val("");
     $("#birthday").val("");
@@ -84,22 +84,24 @@ var data=[
   function stampaDipendenti() {
     var rows = "";
 
-    var css_class = "dim-background";
-    var cls = "";
-    var counter = 0;
-
     $.each(data, function (key, value) {
-      if(counter % 2 == 0){
-        cls = css_class;
-      }
-      counter++;
-      rows += "<tr class='"+ cls +"'>";
+      rows += "<tr>";
       rows += "<td>" + value.id + "</td>";
       rows += "<td>" + value.firstName + "</td>";
       rows += "<td>" + value.lastName + "</td>";
-      rows += "<td>" + "<button class='delete-button' onclick='removeEmployee(" + value.id + "); updateEmployees();'>Cancella</button>" + "</td>";
+      rows += "<td>" + "<button class='delete-button' onclick='eliminaDipendenti(" + value.id + "); stampaDipendenti();'>Cancella</button>" + "</td>";
       rows += "</tr>";
-      cls = "";
+      
     });
     $("#to-fill").html(rows);
+}
+
+function rimuoviDipendente(id){
+  let i = 0;
+  $.each(data, function(key, value){
+    if(value.id == id){
+      data.splice(i, 1);
+    }
+    i++;
+  })
 }
