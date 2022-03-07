@@ -1,28 +1,4 @@
-.titolo{
 
-    color: black;
-    text-align: center;
-    
-}
-.tabella *{
-
-    border: 2px solid cornflowerblue;
-    padding: 5px;
-    width: 15rem;
-    color: chocolate;
-    text-align: center;
-    background-color: bisque;
-    
-}
-.tabella{
-
-    border: 2px solid cornflowerblue;
-    border-collapse: collapse;
-    padding: 0;
-    margin: 0;
-    
-}
-  
 .header {
     color:white;
     background-color: darkorange;
@@ -30,6 +6,10 @@
     margin: 0;
     padding: 0;
     user-select: none;
+}
+
+.disabled{
+    pointer-events: none;
 }
 
 .xl{
@@ -47,6 +27,24 @@ html, body {
 
 .modal-container {
     margin-left: calc(50% - 15rem);
+}
+
+.table >tr,
+.table th,
+.table td{
+    border: 2px solid cornflowerblue;
+    padding: 5px;
+    width: 15rem;
+    color: chocolate;
+    text-align: center;
+    background-color: bisque;
+}
+
+.table {
+    border: 2px solid cornflowerblue;
+    border-collapse: collapse;
+    padding: 0;
+    margin: 0;
 }
 
 .header-table {
@@ -80,16 +78,31 @@ html, body {
     background: #E0E0E0;
 }
 
+.paging-button{
+    width: 6em;
+    height: 3em;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    background-color: darkcyan;
+    color: aquamarine;
+    border: 1px solid darkcyan;
+    border-radius: 5px;
+    user-select: none;
+
+    transition: 500ms ease-out;
+}
+
 .button{
     width: 6em;
     height: 3em;
     font-size: 18px;
     font-weight: bold;
     text-align: center;
-    background-color: blueviolet;
-    color: white;
-}
+    background-color: darkviolet;
+    color: pink;
 
+}
 
 
 .modal {
@@ -149,6 +162,45 @@ label{
     left: 40%;
 }
 
+.display-none{
+    display: none;
+}
+
+.save-button{
+    user-select: none;
+    background: crimson;
+    color: aliceblue;
+    font-weight: bold;
+    font-size: large;
+    border: none;
+    border-radius: 4px;
+    width: 6rem;
+    height: 2em;
+    box-shadow: 0px 4px #080;
+    transition: 100ms ease-in;
+    margin-right: 5px;
+}
+
+.save-button:active{
+    transform: translateY(3px);
+    box-shadow: 0px 1px #555;
+}
+
+.change-button{
+    user-select: none;
+    background: violet;
+    color: darkorchid;
+    font-weight: bold;
+    font-size: large;
+    border: none;
+    border-radius: 4px;
+    width: 6rem;
+    height: 2em;
+    box-shadow: 0px 4px tomato;
+    transition: 100ms ease-in;
+    margin-right: 5px;
+}
+
 .delete-button{
     user-select: none;
     background: red;
@@ -175,10 +227,11 @@ label{
     font-weight: bold;
     text-align: center;
     background-color: darkmagenta;
-    color: white;
+    color: pink;
     border: none;
     border-radius: 5px;
     user-select: none;
+
 }
 
 .delete-button{
@@ -188,10 +241,10 @@ label{
     font-weight: bold;
     font-size: large;
     border: none;
-    border-radius: 4px;
+    border-radius: 4px;margin:0;
+    padding:0;
     width: 6rem;
     height: 2em;
     box-shadow: 0px 4px #BB0000;
     transition: 100ms ease-in;
 }
-
